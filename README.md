@@ -2,6 +2,9 @@
 
 # JavaScript30
 
+WHERE I SAVE ALL my file: https://github.com/heggy231/wesBox-javascript-30
+
+
 Starter Files + Completed solutions for the JavaScript 30 Day Challenge.
 
 Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
@@ -61,3 +64,21 @@ These are meant to be 1:1 copies of what is done in the video. If you found a be
 The starter files + solutions will be updated if/when the videos are updated.
 
 Thanks!
+
+---
+1) lesson 1 keyboard
+http://keycode.info/
+  ```js
+    window.addEventListener('keydown', function(e) {
+      console.log(e);
+    });
+  ```
+- this add eventListener anytime key is down.
+  => KeyboardEvent {isTrusted: true, key: "s", code: "KeyS", location: 0, ctrlKey: false, …}
+
+- our interest is the KeyboardEvent.keyCode how do you only show the keyCode value only?
+  ```js
+    window.addEventListener('keydown', function(e) {
+      console.log(e.keyCode);
+    });
+  ```
