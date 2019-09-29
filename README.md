@@ -82,3 +82,31 @@ http://keycode.info/
       console.log(e.keyCode);
     });
   ```
+
+how to restart the audio element?
+`audio.currentTime = 0`
+
+<audio id="audio1" src="01.wav"></audio>
+<button onClick="play()">Play</button>
+
+```html
+<div data-key="65" class="key">
+  <kbd>A</kbd>
+  <span class="sound">clap</span>
+</div>
+
+<audio data-key="65" class="key-65" src="sounds/clap.wav"></audio>
+```
+```js
+  window.addEventListener('keydown', function(e) {
+    // is there an audio element that has data-key = 65?
+    // if we look for many then querySelectorAll, but we
+    //  only looking for only single, select audio element
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if(!audio) return; // stop the function from running all together.
+    audio.currentTime = 0; // rewind to start
+    audio.play();
+  });
+```
+
