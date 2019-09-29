@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <audio data-key="65" src="sounds/clap.wav"></audio>
+  <audio data-key="65" class="key-65" src="sounds/clap.wav"></audio>
   <audio data-key="83" src="sounds/hihat.wav"></audio>
   <audio data-key="68" src="sounds/kick.wav"></audio>
   <audio data-key="70" src="sounds/openhat.wav"></audio>
@@ -59,8 +59,22 @@
 
 <script>
   window.addEventListener('keydown', function(e) {
-    console.log(e.keyCode);
+    // is there an audio element that has data-key = 65?
+    // if we look for many then querySelectorAll, but we
+    //  only looking for only single, select audio element
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+    if(!audio) return; // stop the function from running all together.
+    audio.currentTime = 0; // rewind to start
+    audio.play();
+    console.log('audio!!!', audio);
+    console.log('key', key);
   });
+
+  
+
 </script>
 
 
