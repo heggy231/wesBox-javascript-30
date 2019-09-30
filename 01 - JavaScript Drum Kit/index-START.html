@@ -86,6 +86,14 @@
 
   });
 
+  const keys = document.querySelectorAll('.key');
+  keys.forEach((key) => {
+    key.addEventListener('transitionend', () => {
+      key.classList.remove("playing");
+    });
+  });
+
+
 
 
 
