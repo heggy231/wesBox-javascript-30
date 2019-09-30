@@ -160,3 +160,13 @@ https://www.w3schools.com/howto/howto_js_add_class.asp
         border-color: #ffc600;
         box-shadow: 0 0 1rem #ffc600;
       }
+```
+- remove transition to get the style off
+```js
+option 1) 
+  const keys = document.querySelectorAll('.key');
+  keys.forEach(key => {
+    key.addEventListener('transitionend', () => {
+      key.classList.remove("playing");
+    });
+  });
