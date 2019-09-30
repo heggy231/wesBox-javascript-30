@@ -58,12 +58,16 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+
   window.addEventListener('keydown', function(e) {
     // is there an audio element that has data-key = 65?
     // if we look for many then querySelectorAll, but we
     //  only looking for only single, select audio element
+    // debugger;
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
 
+    // select class="key" with attribut selector data-key=
+    //  the key you pressed ex key s is data-key="83"aa
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
     if(!audio) return; // stop the function from running all together.
@@ -71,9 +75,20 @@
     audio.play();
     console.log('audio!!!', audio);
     console.log('key', key);
+    // add and remove every click the style of class="playing" to the current playing key
+    // if ( key.classList.contains("playing") ) key.classList.toggle("playing");
+    key.classList.add("playing");
+
+    // setTimeout(function() {
+    //   // debugger;
+    //   key.classList.remove("playing");
+    // }, 70);
+
   });
 
-  
+
+
+
 
 </script>
 

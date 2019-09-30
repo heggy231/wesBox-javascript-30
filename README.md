@@ -110,3 +110,53 @@ how to restart the audio element?
   });
 ```
 
+
+- we are going to scale it up, change the border color,
+  add box-shadow.
+```css
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+```
+
+- how to add a class name to an element with JavaScript.
+https://www.w3schools.com/howto/howto_js_add_class.asp
+
+```js
+  // add the style of class="playing" to the current playing key
+  html)
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    
+    <audio data-key="76" src="sounds/tink.wav"></audio>
+  
+  javascript)
+  // select class="key" with attribute selector data-key=
+  //  the key you pressed ex key s is data-key="83"
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+  key.classList.add("playing");
+    inside CSS)
+      .key {
+        border: .4rem solid black;
+        border-radius: .5rem;
+        margin: 1rem;
+        font-size: 1.5rem;
+        padding: 1rem .5rem;
+        transition: all .07s ease;
+        width: 10rem;
+        text-align: center;
+        color: white;
+        background: rgba(0,0,0,0.4);
+        text-shadow: 0 0 .5rem black;
+      }
+
+      .playing {
+        transform: scale(1.1);
+        border-color: #ffc600;
+        box-shadow: 0 0 1rem #ffc600;
+      }
